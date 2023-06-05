@@ -1,5 +1,11 @@
 find_step <- function(df, step_type = "all", collapse = TRUE) {
 
+  # Notes -------------------------------------------------------------------
+
+  # Je me suis inspiré un peu de ceci: https://en.wikipedia.org/wiki/Topological_sorting
+  # Il y a aussi ceci d'intéressant: https://en.wikipedia.org/wiki/Coffman%E2%80%93Graham_algorithm
+  # Voir aussi: https://en.wikipedia.org/wiki/Layered_graph_drawing
+
   if (ncol(df) != 2) stop("Must have two cols")
   names(df) <- c("element", "dependency")
 
